@@ -1,0 +1,48 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Existing Models</h2>
+            <partial name="_ModelListPartial" model="Model.ExistingModels" />
+        </div>
+        <div class="col-md-8">
+            <div class="text-center">
+                <h1 class="display-4">Message Manager</h1>
+                <partial name="_JsonSchemaInputPartial" model="Model.JsonSchemaInput" />
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+        function populateForm(title, description, jsonSchema) {
+            document.getElementById('Title').value = title;
+            document.getElementById('Description').value = description;
+            document.getElementById('JsonSchema').value = jsonSchema;
+        }
+
+        function clearForm() {
+            document.getElementById('Title').value = '';
+            document.getElementById('Description').value = '';
+            document.getElementById('JsonSchema').value = '';
+        }
+    </script>
+@section Scripts {
+    <script>
+        function populateForm(title, description, jsonSchema) {
+            document.getElementById('Title').value = title;
+            document.getElementById('Description').value = description;
+            document.getElementById('JsonSchema').value = jsonSchema;
+        }
+
+        function clearForm() {
+            document.getElementById('Title').value = '';
+            document.getElementById('Description').value = '';
+            document.getElementById('JsonSchema').value = '';
+        }
+    </script>
+}

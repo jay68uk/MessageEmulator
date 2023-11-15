@@ -1,0 +1,25 @@
+﻿@model Message_Emulator.App.Models.JsonSchemaInputModel
+
+<form method="post">
+    <input type="hidden" asp-for="IsEdit" id="IsEdit" />
+    <div class="form-group">
+        <label asp-for="Title">Title:</label>
+        <input asp-for="Title" class="form-control" placeholder="Model name (must be unique)"></input>
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description:</label>
+        <textarea asp-for="Description" class="form-control" rows="2" placeholder="Model description"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="JsonSchema">JSON Schema:</label>
+        <textarea asp-for="JsonSchema" class="form-control" rows="10" placeholder="Enter your JSON schema here"></textarea>
+        <span asp-validation-for="JsonSchema" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+     <button type="button" class="btn btn-secondary" onclick="clearForm()">Cancel</button>
+</form>
+
+

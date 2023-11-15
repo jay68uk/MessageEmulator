@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Message_Emulator.App.Models.JsonSchemaInputModel>
+
+<div class="model-list">
+    <ul class="list-group">
+        @foreach (var item in Model)
+        {
+            <li class="list-group-item" onclick="populateForm('@item.Title', '@item.Description', '@item.JsonSchema')">
+                @item.Title
+            </li>
+        }
+    </ul>
+</div>
+
+<style>
+    .model-list {
+        max-height: 400px;
+        overflow-y: scroll;
+    }
+</style>
+
+
